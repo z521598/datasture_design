@@ -22,11 +22,19 @@ public class BinaryTreeTest {
         return root;
     }
 
+
     @Test
-    public void testNlr() {
+    public void testLrn() {
         BinaryTree<Integer> binaryTree = new BinaryTree<>(getRoot());
-        assertEquals("[1,2,4,5,3,6]", binaryTree.nlr().toString().replaceAll(" ", ""));
+        assertEquals("[4,5,2,6,3,1]", binaryTree.lrn().toString().replaceAll(" ", ""));
     }
+
+    @Test
+    public void testLrnWithoutRecursion() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(getRoot());
+        assertEquals("[4,5,2,6,3,1]", binaryTree.lrnWithoutRecursion().toString().replaceAll(" ", ""));
+    }
+
 
     @Test
     public void testLnr() {
@@ -35,8 +43,22 @@ public class BinaryTreeTest {
     }
 
     @Test
-    public void testLrn() {
+    public void testLnrWithoutRecursion() {
         BinaryTree<Integer> binaryTree = new BinaryTree<>(getRoot());
-        assertEquals("[4,5,2,6,3,1]", binaryTree.lrn().toString().replaceAll(" ", ""));
+        assertEquals("[4,2,5,1,3,6]", binaryTree.lnrWithoutRecursion().toString().replaceAll(" ", ""));
     }
+
+    @Test
+    public void testNlr() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(getRoot());
+        assertEquals("[1,2,4,5,3,6]", binaryTree.nlr().toString().replaceAll(" ", ""));
+    }
+
+    @Test
+    public void testNlrWithoutRecursion() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>(getRoot());
+        assertEquals("[1,2,4,5,3,6]", binaryTree.nlrWithoutRecursion().toString().replaceAll(" ", ""));
+    }
+
+
 }
